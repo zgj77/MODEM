@@ -1,0 +1,38 @@
+seed: 1
+model:
+  resolutions: 4
+  diffusion_steps: 50
+  beta_start: 0.0001
+  beta_end: 0.5
+  channels: 64
+  prior_channels: 32
+  heads: 8
+  invariant_blocks: 2
+  variant_blocks: 4
+  branches: 5
+  dilation: 2
+  kernel_size: 5
+  dropout: 0.0
+  n_fft: 32
+  hop_length: 8
+  frequency_fraction: 0.2
+data:
+  window: 100
+  train_stride: 1
+  test_stride: 100
+  validation_fraction: 0.05
+train:
+  epochs: 100
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.000001
+  gradient_clip: 1.0
+  workers: 0
+inference:
+  sampling_steps: 20
+  keep_steps: 10
+  eta: 0.0
+  mask_block: 16
+  samples: 1
+  final_fraction: 0.02
+  vote_threshold: 10
